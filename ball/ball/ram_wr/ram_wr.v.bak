@@ -1,0 +1,12 @@
+module ram_wr(         //decode x,y to address
+       input        clk50M,
+		 input        rst_n,
+		 input [7:0]  x,
+		 input [8:0]  y,
+		 input        write_en,
+		 input [2:0]  color,
+		 output       ram_wren,
+		 output [2:0] ram_data
+);
+
+endmodule 

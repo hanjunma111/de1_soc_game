@@ -1,0 +1,10 @@
+module ram2lcd(                  //this module read ram and write lcd_ctrl module
+       input clk50M,
+		 input rst_n,
+		 input         pixelReady,  //lcd controller pixelReady
+		 output [16:0] ram_rdaddr,  //dpram's read address
+		 output [7:0]  xAddr,       //lcd controller xADDR
+		 output [8:0]  yAddr        //lcd controller yADDR
+);
+
+endmodule 

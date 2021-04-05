@@ -1,0 +1,29 @@
+module ball(
+       input       clk50M,
+		 input [3:0] KEY,
+		 input [9:0] SW,
+		 // LT24 Interface
+		 output             LT24Wr_n,
+		 output             LT24Rd_n,
+		 output             LT24CS_n,
+		 output             LT24RS,
+		 output             LT24Reset_n,
+		 output [     15:0] LT24Data,
+		 output             LT24LCDOn
+		 
+);
+disp_dpram u_disp_dpram_0 (
+	.address_a(),
+	.address_b(),
+	.clock(clk50M),
+	.data_a(),
+	.data_b(),
+	.rden_a(1'b0),
+	.rden_b(),
+	.wren_a(1'b0),
+	.wren_b(),
+	.q_a(),
+	.q_b()
+	);
+
+endmodule 

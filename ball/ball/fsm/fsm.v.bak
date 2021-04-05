@@ -1,0 +1,12 @@
+module fsm(
+       input        clk50M,
+		 input        rst_n,
+		 input        flg1,
+		 input        flg2,
+		 output [7:0] x,
+		 output [8:0] y,
+		 output       write_en,
+		 output [2:0] color
+);
+
+endmodule 

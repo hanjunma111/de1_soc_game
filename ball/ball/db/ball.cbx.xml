@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ball">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ball|disp_dpram:u_disp_dpram_0|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_0mn2.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

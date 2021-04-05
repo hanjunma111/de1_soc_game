@@ -1,0 +1,79 @@
+--lpm_decode CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone V" LPM_DECODES=16 LPM_WIDTH=4 data enable eq
+--VERSION_BEGIN 13.1 cbx_cycloneii 2013:10:23:18:05:48:SJ cbx_lpm_add_sub 2013:10:23:18:05:48:SJ cbx_lpm_compare 2013:10:23:18:05:48:SJ cbx_lpm_decode 2013:10:23:18:05:48:SJ cbx_mgl 2013:10:23:18:06:54:SJ cbx_stratix 2013:10:23:18:05:48:SJ cbx_stratixii 2013:10:23:18:05:48:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+
+--synthesis_resources = lut 18 
+SUBDESIGN decode_tma
+( 
+	data[3..0]	:	input;
+	enable	:	input;
+	eq[15..0]	:	output;
+) 
+VARIABLE 
+	data_wire[3..0]	: WIRE;
+	enable_wire	: WIRE;
+	eq_node[15..0]	: WIRE;
+	eq_wire[15..0]	: WIRE;
+	w_anode659w[1..0]	: WIRE;
+	w_anode668w[3..0]	: WIRE;
+	w_anode685w[3..0]	: WIRE;
+	w_anode695w[3..0]	: WIRE;
+	w_anode705w[3..0]	: WIRE;
+	w_anode715w[3..0]	: WIRE;
+	w_anode725w[3..0]	: WIRE;
+	w_anode735w[3..0]	: WIRE;
+	w_anode745w[3..0]	: WIRE;
+	w_anode757w[1..0]	: WIRE;
+	w_anode764w[3..0]	: WIRE;
+	w_anode775w[3..0]	: WIRE;
+	w_anode785w[3..0]	: WIRE;
+	w_anode795w[3..0]	: WIRE;
+	w_anode805w[3..0]	: WIRE;
+	w_anode815w[3..0]	: WIRE;
+	w_anode825w[3..0]	: WIRE;
+	w_anode835w[3..0]	: WIRE;
+	w_data657w[2..0]	: WIRE;
+
+BEGIN 
+	data_wire[] = data[];
+	enable_wire = enable;
+	eq[] = eq_node[];
+	eq_node[15..0] = eq_wire[15..0];
+	eq_wire[] = ( ( w_anode835w[3..3], w_anode825w[3..3], w_anode815w[3..3], w_anode805w[3..3], w_anode795w[3..3], w_anode785w[3..3], w_anode775w[3..3], w_anode764w[3..3]), ( w_anode745w[3..3], w_anode735w[3..3], w_anode725w[3..3], w_anode715w[3..3], w_anode705w[3..3], w_anode695w[3..3], w_anode685w[3..3], w_anode668w[3..3]));
+	w_anode659w[] = ( (w_anode659w[0..0] & (! data_wire[3..3])), enable_wire);
+	w_anode668w[] = ( (w_anode668w[2..2] & (! w_data657w[2..2])), (w_anode668w[1..1] & (! w_data657w[1..1])), (w_anode668w[0..0] & (! w_data657w[0..0])), w_anode659w[1..1]);
+	w_anode685w[] = ( (w_anode685w[2..2] & (! w_data657w[2..2])), (w_anode685w[1..1] & (! w_data657w[1..1])), (w_anode685w[0..0] & w_data657w[0..0]), w_anode659w[1..1]);
+	w_anode695w[] = ( (w_anode695w[2..2] & (! w_data657w[2..2])), (w_anode695w[1..1] & w_data657w[1..1]), (w_anode695w[0..0] & (! w_data657w[0..0])), w_anode659w[1..1]);
+	w_anode705w[] = ( (w_anode705w[2..2] & (! w_data657w[2..2])), (w_anode705w[1..1] & w_data657w[1..1]), (w_anode705w[0..0] & w_data657w[0..0]), w_anode659w[1..1]);
+	w_anode715w[] = ( (w_anode715w[2..2] & w_data657w[2..2]), (w_anode715w[1..1] & (! w_data657w[1..1])), (w_anode715w[0..0] & (! w_data657w[0..0])), w_anode659w[1..1]);
+	w_anode725w[] = ( (w_anode725w[2..2] & w_data657w[2..2]), (w_anode725w[1..1] & (! w_data657w[1..1])), (w_anode725w[0..0] & w_data657w[0..0]), w_anode659w[1..1]);
+	w_anode735w[] = ( (w_anode735w[2..2] & w_data657w[2..2]), (w_anode735w[1..1] & w_data657w[1..1]), (w_anode735w[0..0] & (! w_data657w[0..0])), w_anode659w[1..1]);
+	w_anode745w[] = ( (w_anode745w[2..2] & w_data657w[2..2]), (w_anode745w[1..1] & w_data657w[1..1]), (w_anode745w[0..0] & w_data657w[0..0]), w_anode659w[1..1]);
+	w_anode757w[] = ( (w_anode757w[0..0] & data_wire[3..3]), enable_wire);
+	w_anode764w[] = ( (w_anode764w[2..2] & (! w_data657w[2..2])), (w_anode764w[1..1] & (! w_data657w[1..1])), (w_anode764w[0..0] & (! w_data657w[0..0])), w_anode757w[1..1]);
+	w_anode775w[] = ( (w_anode775w[2..2] & (! w_data657w[2..2])), (w_anode775w[1..1] & (! w_data657w[1..1])), (w_anode775w[0..0] & w_data657w[0..0]), w_anode757w[1..1]);
+	w_anode785w[] = ( (w_anode785w[2..2] & (! w_data657w[2..2])), (w_anode785w[1..1] & w_data657w[1..1]), (w_anode785w[0..0] & (! w_data657w[0..0])), w_anode757w[1..1]);
+	w_anode795w[] = ( (w_anode795w[2..2] & (! w_data657w[2..2])), (w_anode795w[1..1] & w_data657w[1..1]), (w_anode795w[0..0] & w_data657w[0..0]), w_anode757w[1..1]);
+	w_anode805w[] = ( (w_anode805w[2..2] & w_data657w[2..2]), (w_anode805w[1..1] & (! w_data657w[1..1])), (w_anode805w[0..0] & (! w_data657w[0..0])), w_anode757w[1..1]);
+	w_anode815w[] = ( (w_anode815w[2..2] & w_data657w[2..2]), (w_anode815w[1..1] & (! w_data657w[1..1])), (w_anode815w[0..0] & w_data657w[0..0]), w_anode757w[1..1]);
+	w_anode825w[] = ( (w_anode825w[2..2] & w_data657w[2..2]), (w_anode825w[1..1] & w_data657w[1..1]), (w_anode825w[0..0] & (! w_data657w[0..0])), w_anode757w[1..1]);
+	w_anode835w[] = ( (w_anode835w[2..2] & w_data657w[2..2]), (w_anode835w[1..1] & w_data657w[1..1]), (w_anode835w[0..0] & w_data657w[0..0]), w_anode757w[1..1]);
+	w_data657w[2..0] = data_wire[2..0];
+END;
+--VALID FILE
